@@ -295,6 +295,8 @@ class DeyeConfig:
             active_processors.append("time_of_use")
         if DeyeEnv.boolean("DEYE_FEATURE_ACTIVE_POWER_REGULATION", False):
             active_processors.append("active_power_regulation")
+        if DeyeEnv.boolean("DEYE_FEATURE_GRID_CHARGE", False):
+            active_processors.append("grid_charge")
         if DeyeEnv.boolean("DEYE_FEATURE_MULTI_INVERTER_DATA_AGGREGATOR", False):
             active_processors.append("multi_inverter_data_aggregator")
         return active_processors
