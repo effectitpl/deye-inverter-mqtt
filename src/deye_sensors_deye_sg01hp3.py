@@ -1223,7 +1223,7 @@ deye_sg01hp3_register_ranges = [
     SensorRegisterRange(group="deye_sg01hp3", first_reg_address=500, last_reg_address=500),
     SensorRegisterRange(group="deye_sg01hp3", first_reg_address=552, last_reg_address=552),
     SensorRegisterRange(group="deye_sg01hp3_ups", first_reg_address=514, last_reg_address=558),
-    SensorRegisterRange(group="deye_sg01hp3_timeofuse", first_reg_address=128, last_reg_address=128),
+    SensorRegisterRange(group="deye_sg01hp3_grid_charge", first_reg_address=128, last_reg_address=128),
     SensorRegisterRange(group="deye_sg01hp3", first_reg_address=514, last_reg_address=558),
     SensorRegisterRange(group="deye_sg01hp3_battery", first_reg_address=514, last_reg_address=558),
     SensorRegisterRange(group="deye_sg01hp3_battery", first_reg_address=586, last_reg_address=596),
