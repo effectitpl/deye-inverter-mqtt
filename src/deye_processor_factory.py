@@ -25,6 +25,7 @@ from deye_mqtt_publisher import DeyeMqttPublisher
 from deye_set_time_processor import DeyeSetTimeProcessor
 from deye_timeofuse_service import DeyeTimeOfUseService
 from deye_active_power_regulation import DeyeActivePowerRegulationEventProcessor
+from deye_grid_charge import DeyeGridChargeControlEventProcessor
 from deye_sensor import Sensor
 from deye_plugin_loader import DeyePluginContext, DeyePluginLoader
 from deye_multi_inverter_data_aggregator import DeyeMultiInverterDataAggregator
@@ -60,6 +61,9 @@ class DeyeProcessorFactory:
         self.__append_processor(processors, DeyeTimeOfUseService(logger_config, self.__mqtt_client, sensors, modbus))
         self.__append_processor(
             processors, DeyeActivePowerRegulationEventProcessor(logger_config, self.__mqtt_client, sensors, modbus)
+        )
+        self.__append_processor(
+            processors, DeyeGridChargeControlEventProcessor(logger_config, self.__mqtt_client, sensors, modbus)
         )
         return processors
 

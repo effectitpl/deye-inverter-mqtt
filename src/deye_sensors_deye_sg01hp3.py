@@ -107,6 +107,16 @@ deye_sg01hp3_solar_534 = DoubleRegisterSensor(
     "Total Production", 534, 0.1, mqtt_topic_suffix="total_energy", unit="kWh", signed=False, groups=["deye_sg01hp3"]
 )
 
+deye_sg01hp3_grid_charge_128 = SingleRegisterSensor(
+    "Grid Charge",
+    128,
+    1,
+    mqtt_topic_suffix="grid_charge",
+    unit="A",
+    signed=False,
+    groups=["deye_sg01hp3_grid_charge"],
+)
+
 deye_sg01hp3_battery_514 = SingleRegisterSensor(
     "Daily Battery Charge",
     514,
@@ -1119,6 +1129,7 @@ deye_sg01hp3_sensors = [
     deye_sg01hp3_bms2_248,
     deye_sg01hp3_bms2_249,
     deye_sg01hp3_bms2_250,
+    deye_sg01hp3_grid_charge_128,
     deye_sg01hp3_battery_514,
     deye_sg01hp3_battery_515,
     deye_sg01hp3_battery_516,
@@ -1212,6 +1223,7 @@ deye_sg01hp3_register_ranges = [
     SensorRegisterRange(group="deye_sg01hp3", first_reg_address=500, last_reg_address=500),
     SensorRegisterRange(group="deye_sg01hp3", first_reg_address=552, last_reg_address=552),
     SensorRegisterRange(group="deye_sg01hp3_ups", first_reg_address=514, last_reg_address=558),
+    SensorRegisterRange(group="deye_sg01hp3_timeofuse", first_reg_address=128, last_reg_address=128),
     SensorRegisterRange(group="deye_sg01hp3", first_reg_address=514, last_reg_address=558),
     SensorRegisterRange(group="deye_sg01hp3_battery", first_reg_address=514, last_reg_address=558),
     SensorRegisterRange(group="deye_sg01hp3_battery", first_reg_address=586, last_reg_address=596),
